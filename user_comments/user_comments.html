@@ -1,30 +1,57 @@
 <html>
 <head>
     <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="user_commentsCSS.css">
     <link rel="shortcut icon" href="simpleflask_icon.svg" type="image/svg">
+    <style>
+		/* Desktop styles */
+		@media only screen and (min-width: 769px) {
+			.mobile-only {
+				display: none;
+			}
+		}
+
+		/* Mobile styles */
+		@media only screen and (max-width: 768px) {
+			.mobile-only {
+				display: block;
+			}
+		}
+	</style>
 </head>
 
 <body style="background-color:#B5BAD0;">
-    <h1 style="font-family: Perpetua;font-size: 50px; color:#0f0f0f" class="CenterItem"><u>User Comments</u></h1>
-    <!--   <div style="background-color: #AB90F0; padding:10px; width: 450px; height:100px; position:absolute; z-index: -1; margin-left: 420px; margin-top: 60px" class="CenterItem"></div>  -->
-    <div style="background-color: #7389AE; padding:10px; max-width: 450px; margin-top: 30px;" class="CenterItem">
-        <p style="font-size:18px">If you have any comments or complaints, please type them into the box below. Receiving constructive feedback will allow me to fine tune any issues and implement any additional features.</p>
-    </div>
-    <!--   <div style="background-color: #DCD5FD; padding:10px; width: 450px; height:150px; position:absolute; z-index: -1; margin-left: 420px; margin-top: 28px" class="CenterItem"></div>   -->
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSfpt6tJYDX0PrL-r6yjjilwNZMwSMFETAe7-eY8RHYjsiQvjg/formResponse" method="post">
-        <textarea style="background-color: #E0E0E2; margin-top: 20px; border-width: 2px; border-radius: 4px; border-color: #E88158;" id="entry.1430909616" name="entry.1430909616" placeholder="Enter your comment or feedback" rows="10" cols="62" class="CenterItem"></textarea>
-        <button style="margin-top: 20px" type="submit" class="my-btn">Submit</button>
-    </form>
-    <label id="form-success-message" class="form-message" style="font-size: 30px; position: relative">Success!</label>
-    <label id="form-error-message" class="form-message" style="font-size: 30px; position: relative">Error</label>
-    <img src="simpleflask_icon.svg" width="80" height="115" style="position: fixed; margin-top: -450px; margin-left: 20px">
-    <img src="cat_icon.svg" width="50" height="50" style="position:fixed; top:45;right:415">
-    <svg height="300" width="300" style="position: fixed; margin-top: -500px; margin-left: -40px; position:fixed; z-index:-1">
-        <circle cx="50" cy="50" r="210" stroke-width="3" fill="#416788" />
-    </svg>
-    <img src="molecule_icon.svg" width="200" height="250" style="position:fixed; bottom:-20; left:0">
-    <img src="molecule2b_icon.svg" width="200" height="250" style="position:fixed; top:0;right:0">
-    <img src="catwalking_icon.svg" width="75" height="75" style="position:fixed; bottom:0;right:20; transform: scaleX(-1)">
+    <div class="desktop-only">
+		<h1 style="font-family: Perpetua;font-size: 50px; color:#0f0f0f" class="CenterItem"><u>User Comments</u></h1>
+        <!--   <div style="background-color: #AB90F0; padding:10px; width: 450px; height:100px; position:absolute; z-index: -1; margin-left: 420px; margin-top: 60px" class="CenterItem"></div>  -->
+        <div style="background-color: #7389AE; padding:10px; max-width: 450px; margin-top: 30px;" class="CenterItem">
+            <p style="font-size:18px">If you have any comments or complaints, please type them into the box below. Receiving constructive feedback will allow me to fine tune any issues and implement any additional features.</p>
+        </div>
+        <!--   <div style="background-color: #DCD5FD; padding:10px; width: 450px; height:150px; position:absolute; z-index: -1; margin-left: 420px; margin-top: 28px" class="CenterItem"></div>   -->
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfpt6tJYDX0PrL-r6yjjilwNZMwSMFETAe7-eY8RHYjsiQvjg/formResponse" method="post">
+            <textarea style="background-color: #E0E0E2; margin-top: 20px; border-width: 2px; border-radius: 4px; border-color: #E88158;" id="entry.1430909616" name="entry.1430909616" placeholder="Enter your comment or feedback" rows="10" cols="62" class="CenterItem"></textarea>
+            <button style="margin-top: 20px" type="submit" class="my-btn">Submit</button>
+        </form>
+        <img src="simpleflask_icon.svg" width="80" height="115" style="position: fixed; margin-top: -450px; margin-left: 20px">
+        <img src="cat_icon.svg" width="50" height="50" style="position:fixed; top:45;right:415">
+        <svg height="300" width="300" style="position: fixed; margin-top: -500px; margin-left: -40px; position:fixed; z-index:-1">
+            <circle cx="50" cy="50" r="210" stroke-width="3" fill="#416788" />
+        </svg>
+        <img src="molecule_icon.svg" width="200" height="250" style="position:fixed; bottom:-20; left:0">
+        <img src="molecule2b_icon.svg" width="200" height="250" style="position:fixed; top:0;right:0">
+        <img src="catwalking_icon.svg" width="75" height="75" style="position:fixed; bottom:0;right:20; transform: scaleX(-1)">
+	</div>
+
+	<div class="mobile-only">
+		<h1 style="font-family: Perpetua;font-size: 50px; color:#0f0f0f" class="CenterItem"><u>User Comments</u></h1>
+        <div style="background-color: #7389AE; padding:10px; max-width: 450px; margin-top: 30px;" class="CenterItem">
+            <p style="font-size:18px">If you have any comments or complaints, please type them into the box below. Receiving constructive feedback will allow me to fine tune any issues and implement any additional features.</p>
+        </div>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfpt6tJYDX0PrL-r6yjjilwNZMwSMFETAe7-eY8RHYjsiQvjg/formResponse" method="post">
+            <textarea style="background-color: #E0E0E2; border-width: 2px; border-radius: 4px; border-color: #E88158;" id="entry.1430909616" name="entry.1430909616" placeholder="Enter your comment or feedback" rows="10" cols="40" class="CenterItem"></textarea>
+            <button style="margin-top: 20px" type="submit" class="my-btn">Submit</button>
+        </form>
+	</div>
 </body>
 </html>
