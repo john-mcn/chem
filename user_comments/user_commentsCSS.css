@@ -1,0 +1,33 @@
+.CenterItem{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.form-message{
+  display: none;
+}
+.form-message.show{
+  display:block;
+}
+.my-btn {
+  background-color: #7389AE;
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 5px;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 4px #888888;
+}
+
+.my-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
