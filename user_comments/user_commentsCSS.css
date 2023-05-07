@@ -3,13 +3,6 @@
     margin: 0 auto;
     display: block;
 }
-
-.form-message{
-  display: none;
-}
-.form-message.show{
-  display:block;
-}
 .my-btn {
   background-color: #7389AE;
   border: none;
