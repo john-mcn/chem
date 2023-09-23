@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none;
+        }
+        .card.show {
+            display: block;
+        }
+        .card-title {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .card-content {
+            display: none;
+            padding: 20px;
+        }
+        .card-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .next-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card1">
+        <h1 class="card-title">Card Title 1</h1>
+        <div class="card-content">
+            <p>This is the hidden content of Card 1.</p>
+        </div>
+        <button class="card-button" onclick="flipCard('card1')">Flip Card</button>
+    </div>
+    <div class="card" id="card2">
+        <h1 class="card-title">Card Title 2</h1>
+        <div class="card-content">
+            <p>This is the hidden content of Card 2.</p>
+        </div>
+        <button class="card-button" onclick="flipCard('card2')">Flip Card</button>
+    </div>
+    <div class="card" id="card3">
+        <h1 class="card-title">Card Title 3</h1>
+        <div class="card-content">
+            <p>This is the hidden content of Card 3.</p>
+        </div>
+        <button class="card-button" onclick="flipCard('card3')">Flip Card</button>
+    </div>
+    
+    <button class="next-button" onclick="nextCard()">Next</button>
+
+    <script>
+        let cards = document.querySelectorAll('.card');
+        let currentCardIndex = -1;
+
+        function getRandomCard() {
+            const newIndex = Math.floor(Math.random() * cards.length);
+            if (newIndex === currentCardIndex) {
+                return getRandomCard();
+            }
+            currentCardIndex = newIndex;
+            return cards[newIndex];
+        }
+
+        function flipCard(cardId) {
+            const card = document.getElementById(cardId);
+            const cardContent = card.querySelector('.card-content');
+
+            if (cardContent.style.display === "none" || cardContent.style.display === "") {
+                cardContent.style.display = "block";
+            } else {
+                cardContent.style.display = "none";
+            }
+        }
+
+        function nextCard() {
+            const cardIdToShow = getRandomCard();
+            cards.forEach(card => {
+                const cardContent = card.querySelector('.card-content');
+                cardContent.style.display = "none"; // Hide content by default
+                if (card.id === cardIdToShow.id) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        nextCard(); // Show a random card initially
+    </script>
+</body>
+</html>
