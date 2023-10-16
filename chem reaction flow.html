@@ -32,11 +32,13 @@
         }
         button {
             display: inline-block;
-            height: 50px; /*sets height of element*/
+            text-align: center;
+            border: none;
+            border-radius: 12px;
             background: #cfcfcf; /*sets the background of this element (here a solid colour)*/
             transition: all 0.5s; /*sets a transition (for hover effect)*/
-            padding-left: 20px; /*sets 'padding'*/
-            padding-right: 20px; /*sets 'padding'*/
+            padding-left: 2px; /*sets 'padding'*/
+            padding-right: 2px; /*sets 'padding'*/
         }
         button:hover {
             background: #99c8e8; /*sets background colour*/
@@ -45,28 +47,119 @@
 </head>
 <body>
     <div id="home" class="content">
-        <button class="showContent" data-target="halogenoalkane">Halogenoalkane</button>
-        <button class="showContent" data-target="page2">Go to Page 2</button>
+        <img src="reactionmap1.PNG" alt="Clickable Image" usemap="#image-map" style="position:absolute; z-index: -1; margin-left: 25%; height: 125%;">
+        <button class="showContent" data-target="halogenoalkane" style="position: absolute; height: 40px; width: 110px; margin-left:548px; margin-top: 20px">Halogenoalkane</button>
+        <button class="showContent" data-target="alkane" style="position: absolute; height: 40px; width: 110px; margin-left:377px; margin-top: 103px">Alkane</button>
+        <button class="showContent" data-target="alkene" style="position: absolute; height: 40px; width: 110px; margin-left:757px; margin-top: 165px">Alkene</button>
+        <button class="showContent" data-target="alcohol" style="position: absolute; height: 40px; width: 110px; margin-left:645px; margin-top: 285px">Alcohol</button>
         <!-- Add more buttons as needed -->
-        <img src="TESTT.png" alt="Clickable Image" usemap="#image-map" style="position:absolute;z-index: -1;">
     </div>
 
+    <div id="alkane" class="content">
+        <button class="showContent" data-target="home" id="homeButton" style="height:50px; width:80px">Back</button>
+        <h1>Alkane</h1>
+        <br>
+        <u class="reactionTitle">Halogenation (free-radical substitution)</u>
+        <p class="faint"><i class="fainter">Reagents:</i> halogen</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> UV light</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="halogenoalkane" id="link" href="#">halogenoalkane</a> </p>
+    </div>
+
+
+    <div id="alkene" class="content">
+        <button class="showContent" data-target="home" id="homeButton" style="height:50px; width:80px">Back</button>
+        <h1>Alkene</h1>
+        <br>
+        <u class="reactionTitle">Halogenation (electrophilic addition w/ halogen)</u>
+        <p class="faint"><i class="fainter">Reagents:</i> halogen (X₂)</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> room temperature</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="halogenoalkane" id="link" href="#">halogenoalkane</a> </p>
+        <hr>
+        <u class="reactionTitle">Electrophilic addition w/ hydrogen halide</u>
+        <p class="faint"><i class="fainter">Reagents:</i> hydrogen halide (HX)</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="halogenoalkane" id="link" href="#">halogenoalkane</a> </p>
+        <hr>
+        <u class="reactionTitle">Electrophilic addition w/ conc. sulfuric</u>
+        <p class="faint"><i class="fainter">Reagents:</i> sulfuric acid (H₂SO₄(aq))</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> room temperature</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="alkylhydrogensulfate" id="link" href="#">alkylhydrogensulfate</a> </p>
+        <hr>
+        <u class="reactionTitle">Hydration</u>
+        <p class="faint"><i class="fainter">Reagents:</i> steam, phosphoric acid catalyst</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> 300°c, 60atm</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="alcohol" id="link" href="#">alcohol</a> </p>
+    </div>
+    
+
     <div id="halogenoalkane" class="content">
-        <button class="showContent" data-target="home" id="homeButton">Back</button>
-        <h1>Halogenoalkanes</h1>
+        <button class="showContent" data-target="home" id="homeButton" style="height:50px; width:80px">Back</button>
+        <h1>Halogenoalkane</h1>
         <br>
         <u class="reactionTitle">Hydrolysis</u>
         <p class="faint"><i class="fainter">Reagents:</i> aqueous hydroxides (NaOH or KOH)</p>
         <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> warm</p>
-        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="page2" id="link" href="#">alcohol</a> </p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="alcohol" id="link" href="#">alcohol</a> </p>
+        <hr>
+        <u class="reactionTitle">Nucleophilic substitution w/ethanolic cyanide</u>
+        <p class="faint"><i class="fainter">Reagents:</i> cyanide</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> ethanolic, warm</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="nitrile" id="link" href="#">nitrile</a> </p>
+        <hr>
+        <u class="reactionTitle">Nucleophilic substitution w/ excess ammonia</u>
+        <p class="faint"><i class="fainter">Reagents:</i> excess ammonia</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> ethanolic, sealed tube</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="amine" id="link" href="#">amine</a> </p>
+        <hr>
+        <u class="reactionTitle">Elimination</u>
+        <p class="faint"><i class="fainter">Reagents:</i> hydroxide (NaOH or KOH)</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> ethanolic, reflux</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="alkene" id="link" href="#">alkene</a> </p>
+    </div>
+
+
+    <div id="alcohol" class="content">
+        <button class="showContent" data-target="home" id="homeButton" style="height:50px; width:80px">Back</button>
+        <h1>Alcohol</h1>
+        <br>
+        <u class="reactionTitle">Dehydration (elimination)</u>
+        <p class="faint"><i class="fainter">Reagents:</i> conc. sulfuric acid</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> heat</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="alkene" id="link" href="#">alkene</a> </p>
+        <hr>
+        <u class="reactionTitle">Oxidation of 1° alcohol</u>
+        <p class="faint"><i class="fainter">Reagents:</i> acidified potassium dichromate</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> immediate distillation</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="carboxylicacid" id="link" href="#">carboxylic acid</a> </p>
+        <br>
+        <u class="reactionTitle">Further oxidation of 1° alcohol</u>
+        <p class="faint"><i class="fainter">Reagents:</i> acidified potassium dichromate</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> reflux</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="aldehyde" id="link" href="#">aldehyde</a> </p>
+        <br>
+        <u class="reactionTitle">Oxidation of 2° alcohol</u>
+        <p class="faint"><i class="fainter">Reagents:</i> acidified potassium dichromate</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> reflux</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="ketone" id="link" href="#">ketone</a> </p>
+        <hr>
+        <u class="reactionTitle">Esterification of carboxylic acid</u>
+        <p class="faint"><i class="fainter">Reagents:</i> carboxylic acid, conc sulfuric acid catalyst</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> hot</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="ester" id="link" href="#">ester</a> </p>
+        <hr>
+        <u class="reactionTitle">Esterification of acyl chloride/acid anhydride</u>
+        <p class="faint"><i class="fainter">Reagents:</i> RCOCL or RCOOCOR</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Conditions:</i> warm</p>
+        <p class="faint" style="margin-top: -10px"><i class="fainter">Product:</i> <a class="showContent" data-target="ester" id="link" href="#">ester</a> </p>
     </div>
 
     <div id="page2" class="content">
-        <button class="showContent" data-target="home" id="homeButton">Back</button>
+        <button class="showContent" data-target="home" id="homeButton" style="height:50px; width:80px">Back</button>
         <h1>This is Page 2</h1>
     </div>
     <!-- Add more div elements and back buttons as needed -->
 
+
+    <!-- carboxylic acid oxidation to aldehyde-->
     <script>
         const buttons = document.querySelectorAll(".showContent");
         const contentDivs = document.querySelectorAll(".content");
